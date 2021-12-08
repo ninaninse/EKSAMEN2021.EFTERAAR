@@ -61,7 +61,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 window.alert("Der skete en fejl");
             });
     })
-
+    
+    // Nedenfor ses det, at brugerens data er blevet gemt vha. metoden post
     document.getElementById("register").addEventListener("click", (event) => {
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
@@ -71,7 +72,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             password
         }
         
-        // Nedenfor ses det, at brugerens data er blevet gemt vha. metoden post
         fetch("http://localhost:3000/user", {
             method: "POST",
             headers: {
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.location.reload();
     })
 
-    // Neden bliver brugerens varer oprettet via metoden post
+    // Nedenfor bliver brugerens varer oprettet via metoden post
     document.getElementById("list_item").addEventListener("click", (event) => {
         let email = sessionStorage.getItem("email");
         let category = document.getElementById("category").value;
@@ -204,14 +204,14 @@ function tableFromJson(myData) {
         var tabCell = tr.insertCell(-1);
         let updateButton = document.createElement("button");
         updateButton.id =myData[i][col[3]];
-        updateButton.innerHTML = "update";
+        updateButton.innerHTML = "update";                       // Knappen gør det muligt at opdatere en vare
         updateButton.onclick = function() {
             updateItem(updateButton.id );
         }
         tr.appendChild(updateButton)
         var tabCell = tr.insertCell(-1);
         let deleteButton = document.createElement("button");
-        deleteButton.innerHTML = "delete";
+        deleteButton.innerHTML = "delete";                      // Knappen gør det muligt at slette en vare
         deleteButton.onclick = function() {
             deleteItem(updateButton.id);
         }

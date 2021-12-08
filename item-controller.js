@@ -38,7 +38,7 @@ router.post('/itemcatogery', (req, res) => {
     return res.status(200).json(newItemData);
 });
 
-// Læs - brug metoden get til at få varens data til json filen (også ved brug af math.random for at oprette et bestemt id til hver enkelt vare)
+// Læs - bruges metoden get til at få varens data til json filen (også ved brug af math.random for at oprette et bestemt id til hver enkelt vare)
 router.post("/upload", (req, res) => {
     console.log("Hello");
     var form = new formidable.IncomingForm();
@@ -64,7 +64,7 @@ router.post("/upload", (req, res) => {
  });
 });
 
-// Her tilføjes en varer efter de har indtastet dens informationer vha. math.random igen
+// Her tilføjes en vare efter de har indtastet dens informationer vha. math.random igen
 router.post("/item", (req, res) => {
     const category = req.body.category;
     const title = req.body.title;
